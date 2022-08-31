@@ -32,4 +32,4 @@ yarn-error.log*
 /android
 capacitor.config.json
 ionic.config.json
-# package-lock.json
+package-lock.json
