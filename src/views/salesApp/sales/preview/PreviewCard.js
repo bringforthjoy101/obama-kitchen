@@ -57,7 +57,7 @@ const PreviewCard = ({ data }) => {
 					</div>
 					<div className="mt-md-0 mt-2">
 						<h4 className="invoice-title">
-							Invoice <span className="invoice-number">#{data.saleNumber}</span>
+							RECEIPT <span className="invoice-number">#{data.saleNumber}</span>
 						</h4>
 						<div className="invoice-date-wrapper">
 							<p className="invoice-date-title">Date Issued:</p>
@@ -147,7 +147,7 @@ const PreviewCard = ({ data }) => {
 				<Row className="invoice-sales-total-wrapper">
 					<Col className="mt-md-0 mt-3" md="6" order={{ md: 1, lg: 2 }}>
 						<CardText className="mb-0">
-							<span className="font-weight-bold">Salesperson:</span> <span className="ml-75">{data.server.fullName}</span>
+							<span className="font-weight-bold">Waiter:</span> <span className="ml-75">{data.server.fullName}</span>
 						</CardText>
 						<CardText className="mb-0">
 							<span className="font-weight-bold">Initiated By:</span> <span className="ml-75">{data.user.fullName}</span>

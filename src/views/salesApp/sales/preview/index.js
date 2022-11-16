@@ -58,9 +58,9 @@ const InvoicePreview = () => {
 		</div>
 	) : (
 		<Alert color="danger">
-			<h4 className="alert-heading">Invoice not found</h4>
+			<h4 className="alert-heading">Sales not found</h4>
 			<div className="alert-body">
-				Invoice with id: {id} doesn't exist. Check list of all invoices: <Link to="/invoice/list">Invoice List</Link>
+				Sales with id: {id} doesn't exist. Check list of all invoices: <Link to="/sales/list">Sales List</Link>
 			</div>
 		</Alert>
 	)

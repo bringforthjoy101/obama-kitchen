@@ -72,9 +72,9 @@ const Print = () => {
 								/>
 							</Media>
 						</div>
-						<p className="mb-25">{selectedSale?.business?.name || ''}</p>
+						{/* <p className="mb-25">{selectedSale?.business?.name || ''}</p>
 						<p className="mb-25">{selectedSale?.business?.address || ''}</p>
-						<p className="mb-0">+{selectedSale?.business?.phone || ''}</p>
+						<p className="mb-0">+{selectedSale?.business?.phone || ''}</p> */}
 					</div>
 					<div className="mt-md-0 mt-2">
 						<h4 className="font-weight-bold text-right mb-1">RECEIPT #{selectedSale?.saleNumber}</h4>
@@ -82,10 +82,10 @@ const Print = () => {
 							<span className="invoice-date-title">Date:</span>
 							<span className="font-weight-bold"> {moment(selectedSale?.createdAt).format('ll')}</span>
 						</div>
-						<div className="invoice-date-wrapper">
+						{/* <div className="invoice-date-wrapper">
 							<span className="invoice-date-title">Due Date:</span>
 							<span className="font-weight-bold">{moment(selectedSale?.createdAt).format('LL')}</span>
-						</div>
+						</div> */}
 						<div className="invoice-date-wrapper">
 							<span className="invoice-date-title">Amount Paid:</span>
 							<span className="invoice-date">₦{selectedSale?.amountPaid.toLocaleString()}</span>
@@ -94,20 +94,20 @@ const Print = () => {
 							<span className="invoice-date-title">Balance:</span>
 							<span className="invoice-date">₦{selectedSale?.balance.toLocaleString()}</span>
 						</div>
-						<div className="invoice-date-wrapper">
+						{/* <div className="invoice-date-wrapper">
 							<span className="invoice-date-title">Status:</span>
 							<span className="invoice-date">
 								<Badge className="text-capitalize" color={statusObj[selectedSale?.saleStatus]} pill>
 									{selectedSale?.saleStatus}
 								</Badge>
 							</span>
-						</div>
+						</div> */}
 					</div>
 				</div>
 
 				<hr className="my-2" />
 
-				<Table className="mt-2 mb-0" size="20">
+				<Table className="mt-2 mb-0 mr-2" size="100">
 					<thead>
 						<tr>
 							<th className="">Product</th>
@@ -120,12 +120,7 @@ const Print = () => {
 				</Table>
 
 				<Row className="invoice-sales-total-wrapper mt-3">
-					<Col className="mt-md-0 mt-3" md="6" sale={{ md: 1, lg: 2 }}>
-						<p className="mb-0">
-							<span className="font-weight-bold">Salesperson:</span> <span className="ml-75">{selectedSale?.server.fullName}</span>
-						</p>
-					</Col>
-					<Col className="d-flex justify-content-end" md="6" sale={{ md: 2, lg: 1 }}>
+					<Col className="justify-content-end" md="6">
 						<div className="invoice-total-wrapper">
 							<div className="invoice-total-item">
 								<p className="invoice-total-title">Subtotal:</p>
@@ -141,6 +136,11 @@ const Print = () => {
 								<p className="invoice-total-amount">₦{selectedSale?.amountPaid.toLocaleString()}</p>
 							</div>
 						</div>
+					</Col>
+					<Col className="mt-md-0 mt-3" md="6">
+						<p className="mb-0">
+							<span className="font-weight-bold">Waiter:</span> <span className="ml-75">{selectedSale?.server.fullName}</span>
+						</p>
 					</Col>
 				</Row>
 

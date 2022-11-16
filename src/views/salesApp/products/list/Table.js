@@ -190,19 +190,17 @@ const ProductTable = () => {
 
 		doc.autoTable({
 			styles: { halign: 'center' },
-			head: [['User', 'Email', 'Balance', 'Naira Wallet', 'Status']],
+			headStyles: { cellWidth: 70 },
+			head: [['Product Name', 'Price']],
 		})
 		store.allData.map((arr) => {
 			doc.autoTable({
-				styles: { halign: 'left' },
+				styles: { halign: 'center' },
 				columnStyles: {
-					0: { cellWidth: 40 },
+					0: { cellWidth: 70 },
 					1: { cellWidth: 70 },
-					2: { cellWidth: 70 },
-					3: { cellWidth: 60 },
-					4: { cellWidth: 30 },
 				},
-				body: [[arr.names, arr.email, arr.balance, arr.naira_wallet, arr.status]],
+				body: [[arr.name, arr.price.toLocaleString()]],
 			})
 		})
 		doc.save('export.pdf')

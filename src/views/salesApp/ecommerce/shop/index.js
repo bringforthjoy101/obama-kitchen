@@ -4,6 +4,7 @@ import { Fragment, useState, useEffect } from 'react'
 // ** Shop Components
 import Sidebar from './Sidebar'
 import Products from './Products'
+import { getAllData } from '../../servers/store/action'
 
 // ** Custom Components
 import Breadcrumbs from '@components/breadcrumbs'
@@ -23,9 +24,13 @@ const Shop = () => {
 	// ** Vars
 	const dispatch = useDispatch()
 	const store = useSelector((state) => state.ecommerce)
+	const servers = useSelector((state) => state.servers)
+
+	useEffect(() => {}, [dispatch])
 
 	// ** Get products
 	useEffect(() => {
+		dispatch(getAllData())
 		dispatch(
 			getProducts({
 				q: '',

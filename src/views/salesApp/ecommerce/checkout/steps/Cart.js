@@ -211,7 +211,7 @@ const Cart = (props) => {
 								/>
 							</FormGroup>
 							<FormGroup>
-								<Label for="serverId">Server</Label>
+								<Label for="serverId">Waiter</Label>
 								<Select
 									theme={selectThemeColors}
 									className="react-select"
