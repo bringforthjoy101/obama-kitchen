@@ -54,5 +54,6 @@ body {
 
 .invoice-print * {
   border-color: rgba($color: $black, $alpha: 0.5) !important;
-  color: $body-color !important;
+  // color: $body-color !important;
+  color: $body-color2 !important;
 }
