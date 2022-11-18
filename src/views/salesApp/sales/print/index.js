@@ -23,7 +23,8 @@ const Print = () => {
 		//   setData(response.data)
 		// })
 		dispatch(getSale(id))
-		window.print()
+		// setTimeout(window.print(), 10000)
+		// window.print()
 	}, [])
 
 	const { selectedSale } = store
@@ -56,7 +57,7 @@ const Print = () => {
 	}
 
 	return (
-		<div className="invoice-print">
+		<div className="invoice-print" style={{ color: 'black' }}>
 			<div className="row ml-1" style={{ width: '302px' }}>
 				{/* <div className='col-md-3'> */}
 				<div className="d-flex justify-content-between flex-md-row flex-column pb-2">
@@ -77,7 +78,9 @@ const Print = () => {
 						<p className="mb-0">+{selectedSale?.business?.phone || ''}</p> */}
 					</div>
 					<div className="mt-md-0 mt-2">
-						<h4 className="font-weight-bold text-right mb-1">RECEIPT #{selectedSale?.saleNumber}</h4>
+						<h4 className="text-right mb-1" style={{ color: '#000000' }}>
+							RECEIP #{selectedSale?.saleNumber}
+						</h4>
 						<div className="invoice-date-wrapper mb-50">
 							<span className="invoice-date-title">Date:</span>
 							<span className="font-weight-bold"> {moment(selectedSale?.createdAt).format('ll')}</span>
