@@ -323,6 +323,10 @@ const StoreRoutes = [
 			navLink: '/inventories/edit',
 		},
 	},
+	{
+		path: '/reports/list',
+		component: lazy(() => import('../../views/salesApp/reports/list')),
+	},
 ]
 
 export default userData?.role === 'ADMIN' ? ManagerRoutes : userData?.role === 'SALES_REP' ? SalesRepRoutes : StoreRoutes

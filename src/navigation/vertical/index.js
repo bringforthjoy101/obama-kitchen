@@ -16,7 +16,7 @@ export default userData?.role === 'ADMIN'
 	? [...dashboards, ...stores, ...sales, ...products, ...inventories, ...users, ...servers, ...reports, ...settings]
 	: userData?.role === 'SALES_REP'
 	? [...dashboards, ...stores, ...sales, ...settings]
-	: [...dashboards, ...stores, ...sales, ...inventories, ...settings]
+	: [...dashboards, ...stores, ...sales, ...inventories, ...reports, ...settings]
 
 // ** Merge & Export
 // export default [...dashboards, ...stores, ...sales, ...products, ...inventories, ...users, ...reports, ...settings]

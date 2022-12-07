@@ -41,6 +41,13 @@ export const columns = [
 		cell: (row) => <span>{row.type}</span>,
 	},
 	{
+		name: 'Department ',
+		minWidth: '100px',
+		selector: 'department',
+		sortable: true,
+		cell: (row) => <span>{row.department || '--'}</span>,
+	},
+	{
 		name: 'New Qty',
 		selector: 'newQty',
 		sortable: true,

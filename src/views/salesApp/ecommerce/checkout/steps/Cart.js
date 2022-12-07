@@ -167,15 +167,15 @@ const Cart = (props) => {
 					// window.location.href = `/sales/preview/${response.data.data}`
 					history.push(`/sales/preview/${response.data.data}`)
 				} else {
-					swal('Oops!', response.data.message, 'error')
-					dispatch(deleteAllCartItem())
-					setSalesData({
-						...salesData,
-						products,
-						discount: 0,
-						amountPaid: 0,
-					})
-					history.push(`/apps/ecommerce/shop`)
+					swal('Oops!', 'Pls select waiter', 'error')
+					// dispatch(deleteAllCartItem())
+					// setSalesData({
+					// 	...salesData,
+					// 	products,
+					// 	discount: 0,
+					// 	amountPaid: 0,
+					// })
+					// history.push(`/apps/ecommerce/shop`)
 				}
 			} catch (error) {
 				console.error({ error })
@@ -204,6 +204,7 @@ const Cart = (props) => {
 								<Label for="amountPaid">Amount Tendered</Label>
 								<AvInput
 									name="amountPaid"
+									required
 									id="amountPaid"
 									placeholder="Amount Tendered"
 									value={totalAmount}
@@ -216,6 +217,7 @@ const Cart = (props) => {
 									theme={selectThemeColors}
 									className="react-select"
 									classNamePrefix="select"
+									required={true}
 									defaultValue={selectedOption}
 									options={renderServers(store.allData)}
 									isClearable={false}
