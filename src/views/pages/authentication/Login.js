@@ -25,7 +25,7 @@ const ToastContentValid = ({ name, role }) => (
 			</div>
 		</div>
 		<div className="toastify-body">
-			<span>You have successfully logged in as an {role} user to Appia. Now you can start to explore. Enjoy!</span>
+			<span>You have successfully logged in as an {role} user to SalesApp. Now you can start to explore. Enjoy!</span>
 		</div>
 	</Fragment>
 )
@@ -63,8 +63,8 @@ const Login = (props) => {
 	const ability = useContext(AbilityContext)
 	const dispatch = useDispatch()
 	const history = useHistory()
-	const [phone, setPhone] = useState('07067869400')
-	const [password, setPassword] = useState('000000')
+	const [phone, setPhone] = useState('')
+	const [password, setPassword] = useState('')
 	const [isSubmitting, setIsSubmitting] = useState(false)
 
 	const illustration = skin === 'dark' ? 'login-v2-dark.svg' : 'login-v2.svg',
@@ -140,7 +140,7 @@ const Login = (props) => {
 									value={phone}
 									id="login-email"
 									name="login-email"
-									placeholder="07061234567"
+									placeholder="07012345678"
 									onChange={(e) => setPhone(e.target.value)}
 								/>
 							</FormGroup>
