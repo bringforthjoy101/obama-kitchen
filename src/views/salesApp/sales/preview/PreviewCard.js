@@ -5,6 +5,7 @@ import moment from 'moment'
 const PreviewCard = ({ data }) => {
 	const renderTable = (products) => {
 		// products = process.env.NODE_ENV === 'production' ? JSON.parse(products) : products
+		products = JSON.parse(products)
 		return products.map((product) => {
 			return (
 				<tr key={product.id}>
