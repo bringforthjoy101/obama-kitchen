@@ -7,16 +7,16 @@ export const getSalesReport = ({ startDate, endDate }) => {
 		const response = await apiRequest({ url: '/sales-report', method: 'POST', body }, dispatch)
 		if (response) {
 			if (response.data.data && response.data.status) {
-				const report = response.data.data.sales.map(sale => {
+				const sales = response.data.data.sales.map(sale => {
 					return {
 						...sale,
-						products: JSON.parse(sale.product)
+						products: JSON.parse(sale.products)
 					}
 				})
-				console.log({report})
+				console.log({sales})
 				await dispatch({
 					type: 'GET_ALL_REPORT_DATA',
-					data: report,
+					data: {...response.data.data, sales},
 				})
 			} else {
 				console.log(response.error)
