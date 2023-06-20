@@ -63,15 +63,18 @@ const Print = () => {
 				<div className="d-flex justify-content-between flex-md-row flex-column pb-2">
 					<div>
 						<div className="d-flex mb-1" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-							<Media className="mr-25" center>
-								<Media
-									object
-									className="rounded mr-50"
-									src={'https://res.cloudinary.com/bringforthjoy/image/upload/v1661904167/house178_fyddgi.jpg'}
-									alt="Generic placeholder image"
-									height="80"
-								/>
-							</Media>
+							<h4 className="text-right mb-1" style={{ color: '#000000' }}>
+								OBAMA KITCHEN
+							</h4>
+							{/*<Media className="mr-25" center>*/}
+							{/*	<Media*/}
+							{/*		object*/}
+							{/*		className="rounded mr-50"*/}
+							{/*		src={'https://res.cloudinary.com/bringforthjoy/image/upload/v1661904167/house178_fyddgi.jpg'}*/}
+							{/*		alt="Generic placeholder image"*/}
+							{/*		height="80"*/}
+							{/*	/>*/}
+							{/*</Media>*/}
 						</div>
 						{/* <p className="mb-25">{selectedSale?.business?.name || ''}</p>
 						<p className="mb-25">{selectedSale?.business?.address || ''}</p>
@@ -79,7 +82,7 @@ const Print = () => {
 					</div>
 					<div className="mt-md-0 mt-2">
 						<h4 className="text-right mb-1" style={{ color: '#000000' }}>
-							RECEIP #{selectedSale?.saleNumber}
+							RECEIPT #{selectedSale?.saleNumber}
 						</h4>
 						<div className="invoice-date-wrapper mb-50">
 							<span className="invoice-date-title">Date:</span>
