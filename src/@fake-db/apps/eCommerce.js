@@ -372,7 +372,7 @@ const { users } = store.getState()
 const getProducts = async () => {
 	const response = await apiRequest({ url: '/products', method: 'GET' })
 	const sales = await apiRequest({ url: '/sales', method: 'GET' })
-	// console.log('response', response)
+	console.log('response', response)
 	store.dispatch({ type: 'GET_T_PRODUCTS', data: response.data.data, params: { q: '', sortBy: 'featured', perPage: 9, page: 1 } })
 	store.dispatch({ type: 'GET_ALL_SALES_DATA', data: sales.data.data, params: { q: '', selectedSale: null, perPage: 9, page: 1 } })
 	return response.data.data
