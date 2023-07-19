@@ -326,7 +326,7 @@ const ReportsTable = () => {
 						<span className="align-middle fw-bold">{product.product}</span>
 					</td>
 					<td>
-						<span className="align-middle fw-bold">{product.qty} X {product.price}</span>
+						<span className="align-middle fw-bold">{product.qty}</span>
 					</td>
 					<td>{`₦${product.sales.toLocaleString()}`}</td>
 				</tr>
@@ -393,6 +393,7 @@ const ReportsTable = () => {
 											<tbody>
 												{renderTable()}
 												<tr key={'total'}>
+													<td></td>
 													<td>
 														<span className="align-middle fw-bold"> TOTAL </span>
 													</td>
