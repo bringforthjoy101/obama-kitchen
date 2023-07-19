@@ -325,6 +325,9 @@ const ReportsTable = () => {
 					<td>
 						<span className="align-middle fw-bold">{product.product}</span>
 					</td>
+					<td>
+						<span className="align-middle fw-bold">{product.qty} X {product.price}</span>
+					</td>
 					<td>{`₦${product.sales.toLocaleString()}`}</td>
 				</tr>
 			)
@@ -383,6 +386,7 @@ const ReportsTable = () => {
 											<thead>
 												<tr>
 													<th>Products</th>
+													<th>Qty</th>
 													<th>Sales</th>
 												</tr>
 											</thead>
