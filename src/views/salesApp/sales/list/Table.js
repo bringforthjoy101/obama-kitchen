@@ -49,6 +49,8 @@ const TransactionTable = () => {
 	const [currentPage, setCurrentPage] = useState(1)
 	const [rowsPerPage, setRowsPerPage] = useState(10)
 
+	const [currentCategory, setCurrentCategory] = useState({ value: '', label: 'Select Category', number: 0 })
+
 	useEffect(() => {
 		dispatch(getAllData())
 		dispatch(
@@ -59,6 +61,13 @@ const TransactionTable = () => {
 			})
 		)
 	}, [dispatch])
+
+	const categoryOptions = [
+		{ value: '', label: 'Select Category', number: 0 },
+		{ value: 'KITCHEN', label: 'KITCHEN', number: 1 },
+		{ value: 'OUTLET', label: 'OUTLET', number: 2 },
+		{ value: 'AMALA_SPOT', label: 'AMALA SPOT', number: 3 },
+	]
 
 	// ** Function in get data on page change
 	const handlePagination = (page) => {
@@ -229,6 +238,31 @@ const TransactionTable = () => {
 									value={searchTerm}
 									placeholder="Search"
 									onChange={(e) => handleFilter(e.target.value)}
+								/>
+							</FormGroup>
+						</Col>
+						<Col lg="4" md="6">
+							<FormGroup>
+								<Label for="select">Select Category:</Label>
+								<Select
+									theme={selectThemeColors}
+									isClearable={false}
+									className="react-select"
+									classNamePrefix="select"
+									id="select"
+									options={categoryOptions}
+									value={currentCategory}
+									onChange={(data) => {
+										setCurrentCategory(data)
+										dispatch(
+											getFilteredData(store.allData, {
+												page: currentPage,
+												perPage: rowsPerPage,
+												status: data.value,
+												q: searchTerm,
+											})
+										)
+									}}
 								/>
 							</FormGroup>
 						</Col>

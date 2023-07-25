@@ -136,7 +136,7 @@ const ReportsTable = () => {
 		}
 	}, [])
 
-	const statusOptions = [
+	const categoryOptions = [
 		{ value: '', label: 'Select Category', number: 0 },
 		{ value: 'KITCHEN', label: 'KITCHEN', number: 1 },
 		{ value: 'OUTLET', label: 'OUTLET', number: 2 },
@@ -370,7 +370,7 @@ const ReportsTable = () => {
 									className="react-select"
 									classNamePrefix="select"
 									id="select"
-									options={statusOptions}
+									options={categoryOptions}
 									value={currentCategory}
 									onChange={(data) => {
 										setCurrentCategory(data)
