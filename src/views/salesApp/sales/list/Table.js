@@ -107,7 +107,7 @@ const TransactionTable = () => {
 		)
 	}
 
-	const filteredData = store.allData.filter((item) => item.saleNumber.toLowerCase() || moment(item.createdAt).format('lll'))
+	const filteredData = store.allData.filter((item) => item.saleNumber.toLowerCase() || item.category.toLowerCase() || moment(item.createdAt).format('lll'))
 
 	// ** Custom Pagination
 	const CustomPagination = () => {
