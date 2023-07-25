@@ -120,7 +120,7 @@ const ReportsTable = () => {
 
 	// ** Get data on mount
 	useEffect(() => {
-		dispatch(getSalesReport({ startDate: moment().format('L').split('/').join('-'), endDate: moment().format('L').split('/').join('-') }))
+		dispatch(getSalesReport({ startDate: moment().format('L').split('/').join('-'), endDate: moment().format('L').split('/').join('-'), category: 'KITCHEN' }))
 		dispatch(
 			getFilteredData(store.allData.sales, {
 				page: currentPage,

@@ -54,19 +54,19 @@ export const columns = [
 		),
 	},
 	{
+		name: 'Category ',
+		minWidth: '150px',
+		selector: 'category',
+		sortable: true,
+		cell: row => <span className="text-capitalize">{row.category}</span>
+	},
+	{
 		name: 'Amount',
 		width: '150px',
 		selector: 'amount',
 		sortable: true,
 		cell: (row) => <span className="text-capitalize">{row?.amount?.toLocaleString('en-US', { style: 'currency', currency: 'NGN' })}</span>,
 	},
-	// {
-	//   name: 'Products ',
-	//   minWidth: '150px',
-	//   selector: 'products',
-	//   sortable: true,
-	//   cell: row => <span className="text-capitalize">{getItemNames(row.products)}</span>
-	// },
 	{
 		name: 'Amount Paid',
 		width: '150px',

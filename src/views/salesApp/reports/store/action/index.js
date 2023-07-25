@@ -1,13 +1,12 @@
 import { paginateArray, sortCompare, apiRequest, swal } from '@utils'
 
 // ** Get all Report
-export const getSalesReport = ({ startDate, endDate }) => {
+export const getSalesReport = ({ startDate, endDate, category }) => {
 	return async (dispatch) => {
-		const body = JSON.stringify({ startDate, endDate })
+		const body = JSON.stringify({ startDate, endDate, category })
 		const response = await apiRequest({ url: '/sales-report', method: 'POST', body }, dispatch)
 		if (response) {
 			if (response.data.data && response.data.status) {
-
 				await dispatch({
 					type: 'GET_ALL_REPORT_DATA',
 					data: response.data.data
@@ -16,7 +15,7 @@ export const getSalesReport = ({ startDate, endDate }) => {
 				console.log(response.error)
 			}
 		} else {
-			swal('Oops!', 'Somthing went wrong with your network.', 'error')
+			swal('Oops!', 'Something went wrong with your network.', 'error')
 		}
 	}
 }
