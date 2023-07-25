@@ -101,6 +101,7 @@ const TransactionTable = () => {
 			getFilteredData(store.allData, {
 				page: currentPage,
 				perPage: rowsPerPage,
+				category: currentCategory.value,
 				q: val,
 			})
 		)

@@ -30,6 +30,7 @@ export const getFilteredData = (sales, params) => {
 			(sale) =>
 				sale?.saleNumber?.toLowerCase()?.includes(queryLowered) ||
 				sale?.user.fullName?.toLowerCase()?.includes(queryLowered) ||
+				sale?.category.toLowerCase()?.includes(queryLowered) ||
 				moment(sale.createdAt).format('lll').includes(q)
 		)
 
