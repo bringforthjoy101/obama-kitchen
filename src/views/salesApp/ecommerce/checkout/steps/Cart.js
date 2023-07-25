@@ -123,6 +123,7 @@ const Cart = (props) => {
 
 	const subTotal = products.reduce((n, { total }) => n + total, 0)
 	const [selectedOption, setSelectedOption] = useState('')
+	const [selectedCategory, setSelectedCategory] = useState('')
 	const [salesData, setSalesData] = useState({
 		subTotal,
 		products,
@@ -222,6 +223,19 @@ const Cart = (props) => {
 									options={renderServers(store.allData)}
 									isClearable={false}
 									onChange={setSelectedOption}
+								/>
+							</FormGroup>
+							<FormGroup>
+								<Label for="category">Category</Label>
+								<Select
+									theme={selectThemeColors}
+									className="react-select"
+									classNamePrefix="select"
+									required={true}
+									defaultValue={selectedCategory}
+									options={[{ value: 'KITCHEN', label: 'KITCHEN' }, { value: 'OUTLET', label: 'OUTLET' }, { value: 'AMALA_SPOT', label: 'AMALA SPOT' }]}
+									isClearable={false}
+									onChange={setSelectedCategory}
 								/>
 							</FormGroup>
 

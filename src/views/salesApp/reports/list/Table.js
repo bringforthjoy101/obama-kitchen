@@ -107,7 +107,7 @@ const ReportsTable = () => {
 	const [picker, setPicker] = useState([new Date(), new Date()])
 	const [sidebarOpen, setSidebarOpen] = useState(false)
 	const [currentRole, setCurrentRole] = useState({ value: '', label: 'Select Role', number: 0 })
-	const [currentStatus, setCurrentStatus] = useState({ value: '', label: 'Select Status', number: 0 })
+	const [currentCategory, setCurrentCategory] = useState({ value: '', label: 'Select Category', number: 0 })
 	const [userData, setUserData] = useState(null)
 	const [modal, setModal] = useState(false)
 
@@ -135,6 +135,13 @@ const ReportsTable = () => {
 			setUserData(JSON.parse(localStorage.getItem('userData')))
 		}
 	}, [])
+
+	const statusOptions = [
+		{ value: '', label: 'Select Category', number: 0 },
+		{ value: 'KITCHEN', label: 'KITCHEN', number: 1 },
+		{ value: 'OUTLET', label: 'OUTLET', number: 2 },
+		{ value: 'AMALA_SPOT', label: 'AMALA SPOT', number: 3 },
+	]
 
 	// ** Function in get data on page change
 	const handlePagination = (page) => {
@@ -177,7 +184,7 @@ const ReportsTable = () => {
 		const range = date.map((d) => new Date(d).getTime())
 		setPicker(range)
 		dispatch(
-			getSalesReport({ startDate: moment(date[0]).format('L').split('/').join('-'), endDate: moment(date[1]).format('L').split('/').join('-') })
+			getSalesReport({ startDate: moment(date[0]).format('L').split('/').join('-'), endDate: moment(date[1]).format('L').split('/').join('-'), category: currentCategory.value })
 		)
 		dispatch(
 			getFilteredData(store.allData.sales, {
@@ -351,6 +358,31 @@ const ReportsTable = () => {
 									value={searchTerm}
 									placeholder="Sale ID Search"
 									onChange={(e) => handleFilter(e.target.value)}
+								/>
+							</FormGroup>
+						</Col>
+						<Col lg="4" md="6">
+							<FormGroup>
+								<Label for="select">Select Category:</Label>
+								<Select
+									theme={selectThemeColors}
+									isClearable={false}
+									className="react-select"
+									classNamePrefix="select"
+									id="select"
+									options={statusOptions}
+									value={currentCategory}
+									onChange={(data) => {
+										setCurrentCategory(data)
+										dispatch(
+											getFilteredData(store.allData, {
+												page: currentPage,
+												perPage: rowsPerPage,
+												status: data.value,
+												q: searchTerm,
+											})
+										)
+									}}
 								/>
 							</FormGroup>
 						</Col>

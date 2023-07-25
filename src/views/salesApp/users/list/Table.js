@@ -116,9 +116,9 @@ const AdminsTable = () => {
 
 	const statusOptions = [
 		{ value: '', label: 'Select Status', number: 0 },
-		{ value: 'Pending', label: 'Pending', number: 1 },
-		{ value: 'Active', label: 'Active', number: 2 },
-		{ value: 'Inactive', label: 'Inactive', number: 3 },
+		{ value: 'SUSPENDED', label: 'Suspended', number: 1 },
+		{ value: 'ACTIVE', label: 'Active', number: 2 },
+		{ value: 'INACTIVE', label: 'Inactive', number: 3 },
 	]
 
 	// ** Function in get data on page change
