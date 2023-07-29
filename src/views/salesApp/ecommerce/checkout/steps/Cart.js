@@ -134,8 +134,8 @@ const Cart = (props) => {
 	// ** Get data on mount
 	useEffect(() => {
 		// dispatch(getAllData(JSON.parse(localStorage.getItem('userData')).role))
-		setSalesData({ ...salesData, serverId: selectedOption.value, amount: totalAmount, amountPaid: totalAmount })
-	}, [dispatch, selectedOption])
+		setSalesData({ ...salesData, serverId: selectedOption.value, category: selectedCategory.value, amount: totalAmount, amountPaid: totalAmount })
+	}, [dispatch, selectedOption, selectedCategory])
 
 	const store = useSelector((state) => state.servers)
 
