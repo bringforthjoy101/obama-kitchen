@@ -63,19 +63,19 @@ const Print = () => {
 				<div className="d-flex justify-content-between flex-md-row flex-column pb-2">
 					<div>
 						<div className="d-flex mb-1" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-							<h4 className="text-right mb-1" style={{ color: '#000000' }}>
-								OBAMA KITCHEN
-							</h4>
-							{/*<Media className="mr-25" center>*/}
-							{/*	<Media*/}
-							{/*		object*/}
-							{/*		className="rounded mr-50"*/}
-							{/*		src={'https://res.cloudinary.com/bringforthjoy/image/upload/v1661904167/house178_fyddgi.jpg'}*/}
-							{/*		alt="Generic placeholder image"*/}
-							{/*		height="80"*/}
-							{/*	/>*/}
-							{/*</Media>*/}
+							<Media className="mr-25" center>
+								<Media
+									object
+									className="rounded mr-50"
+									src={'https://veniteuniversity.edu.ng/wp-content/uploads/2023/09/D3339122-2CE1-4CF2-89A0-6FBEB2833628.jpeg'}
+									alt="Generic placeholder image"
+									height="80"
+								/>
+							</Media>
 						</div>
+						<h4 className="text-right mb-1" style={{ color: '#000000' }}>
+							VENITE KITCHEN
+						</h4>
 						{/* <p className="mb-25">{selectedSale?.business?.name || ''}</p>
 						<p className="mb-25">{selectedSale?.business?.address || ''}</p>
 						<p className="mb-0">+{selectedSale?.business?.phone || ''}</p> */}

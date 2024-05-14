@@ -41,18 +41,18 @@ const PreviewCard = ({ data }) => {
 				{/* Header */}
 				<div className="d-flex justify-content-between flex-md-row flex-column invoice-spacing mt-0">
 					<div>
-						<h4 className="invoice-title">OBAMA KITCHEN</h4>
-						{/*<div className="logo-wrapper">*/}
-						{/*	<Media className="mr-25" left>*/}
-						{/*		<Media*/}
-						{/*			object*/}
-						{/*			className="rounded mr-50"*/}
-						{/*			src={'https://res.cloudinary.com/bringforthjoy/image/upload/v1661904167/house178_fyddgi.jpg'}*/}
-						{/*			alt="Generic placeholder image"*/}
-						{/*			height="80"*/}
-						{/*		/>*/}
-						{/*	</Media>*/}
-						{/*</div>*/}
+						<div className="logo-wrapper">
+							<Media className="mr-25" left>
+								<Media
+									object
+									className="rounded mr-50"
+									src={'https://veniteuniversity.edu.ng/wp-content/uploads/2023/09/D3339122-2CE1-4CF2-89A0-6FBEB2833628.jpeg'}
+									alt="Generic placeholder image"
+									height="80"
+								/>
+							</Media>
+						</div>
+						<h4 className="invoice-title">VENITE KITCHEN</h4>
 						<CardText className="mb-25">{data.business?.name || ''}</CardText>
 						<CardText className="mb-25">{data.business?.address || ''}</CardText>
 						<CardText className="mb-0">{data.business?.phone || ''}</CardText>
